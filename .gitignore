@@ -1,0 +1,53 @@
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+build/
+*.egg
+.eggs/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.cache/
+.coverage
+htmlcov/
+
+# Env / secrets
+.env
+*.env
+
+# Data / artifacts (keep repo small)
+*.pth
+*.onnx
+*.plan
+*.log
+*.csv
+*.npy
+*.npz
+
+# Local images/videos used for testing
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+
+# Jetson / TensorRT temp
+*.engine
+*.trt

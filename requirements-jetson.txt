@@ -1,0 +1,17 @@
+# Core
+numpy>=1.24
+opencv-python>=4.7
+onnx>=1.14
+onnxsim>=0.4.33
+psutil>=5.9
+
+# TensorRT Python is provided by JetPack (importable as `tensorrt`)
+# DO NOT install nvidia-tensorrt from pip on Jetson.
+
+# CUDA interop (use pip or apt fallback below if build issues)
+pycuda>=2024.1
+
+# Model deps that your ResUNet/blocks rely on
+einops>=0.7
+loralib>=0.1.2
+scipy>=1.11
