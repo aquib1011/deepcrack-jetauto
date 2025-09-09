@@ -30,8 +30,8 @@ htmlcov/
 *.env
 
 # Data / artifacts (keep repo small)
-*.pth
-*.onnx
+# *.pth
+# *.onnx
 *.plan
 *.log
 *.csv
