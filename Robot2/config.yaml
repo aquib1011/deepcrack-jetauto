@@ -1,0 +1,17 @@
+model_path: "models/BEST.onnx"
+img_size: [256, 256]
+threshold: 0.5
+providers: ["CPUExecutionProvider"]
+draw_overlay: true
+alpha: 0.4
+
+# model_path: "models/BEST.onnx"
+# img_size: [256, 256]     # must match training/export
+# threshold: 0.5           # mask binarization
+# # Choose one or more providers (fallback order):
+# # CPU: ["CPUExecutionProvider"]
+# # GPU (x86): ["CUDAExecutionProvider", "CPUExecutionProvider"]
+# # Jetson: ["TensorrtExecutionProvider", "CUDAExecutionProvider", "CPUExecutionProvider"]
+# providers: ["CPUExecutionProvider"]
+# draw_overlay: true       # overlay mask on the image
+# alpha: 0.4               # overlay alpha blending
