@@ -37,6 +37,7 @@ htmlcov/
 *.csv
 *.npy
 *.npz
+*.ipynb
 
 # Local images/videos used for testing
 *.jpg
