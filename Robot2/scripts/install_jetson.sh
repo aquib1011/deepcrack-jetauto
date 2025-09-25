@@ -3,6 +3,13 @@ set -e
 
 echo "🚀 Setting up Jetson Nano for ONNX inference..."
 
+# Check Python version first
+echo "🔍 Checking Python version..."
+python3 --version || {
+    echo "❌ Python 3 not found. Please run install_python3_jetson.sh first"
+    exit 1
+}
+
 # Update system packages
 sudo apt-get update
 sudo apt-get install -y python3-pip python3-dev
