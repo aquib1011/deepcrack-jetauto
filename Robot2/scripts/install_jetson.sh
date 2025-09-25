@@ -1,13 +1,40 @@
 #!/usr/bin/env bash
 set -e
+
+echo "🚀 Setting up Jetson Nano for ONNX inference..."
+
+# Update system packages
+sudo apt-get update
+sudo apt-get install -y python3-pip python3-dev
+
+# Upgrade pip
 python3 -m pip install --upgrade pip
-# Jetson-friendly ORT GPU wheel; change version if your JetPack needs a different one.
-# If this fails on your JetPack version, comment it out and fall back to CPU.
-pip uninstall -y onnxruntime onnxruntime-gpu || true
-pip install --extra-index-url https://download.pytorch.org/whl/cu118 onnxruntime-gpu==1.17.0 || \
-pip install onnxruntime  # fallback CPU
-pip install opencv-python numpy PyYAML
-python - <<'PY'
+
+# Install ONNX Runtime for Jetson (TensorRT support)
+echo "📦 Installing ONNX Runtime with TensorRT support..."
+pip3 uninstall -y onnxruntime onnxruntime-gpu || true
+
+# Try Jetson-specific ONNX Runtime first
+pip3 install onnxruntime-gpu==1.16.3 || {
+    echo "⚠️  onnxruntime-gpu failed, falling back to CPU version"
+    pip3 install onnxruntime
+}
+
+# Install other dependencies
+echo "📦 Installing additional dependencies..."
+pip3 install opencv-python numpy PyYAML psutil
+
+# Verify installation
+echo "🔍 Verifying installation..."
+python3 - <<'PY'
 import onnxruntime as ort
-print("Providers available:", ort.get_available_providers())
+import cv2
+import numpy as np
+import yaml
+print("✅ ONNX Runtime providers:", ort.get_available_providers())
+print("✅ OpenCV version:", cv2.__version__)
+print("✅ NumPy version:", np.__version__)
+print("✅ PyYAML version:", yaml.__version__)
 PY
+
+echo "✅ Setup complete! Ready to run inference on Jetson Nano."
