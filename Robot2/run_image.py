@@ -48,9 +48,9 @@ def main():
         import cv2
         cv2.imwrite(args.save_mask, mask)
 
-    print(f"✅ Wrote: {args.output}")
+    print(f" Wrote: {args.output}")
     if args.save_mask:
-        print(f"✅ Raw mask: {args.save_mask}")
+        print(f"Raw mask: {args.save_mask}")
 
 if __name__ == "__main__":
     main()

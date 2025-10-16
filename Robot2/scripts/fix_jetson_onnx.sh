@@ -33,7 +33,7 @@ python3 -m pip install onnxruntime-gpu==1.12.1 || {
 
 # Install additional dependencies
 echo "📦 Installing additional dependencies..."
-python3 -m pip install opencv-python numpy PyYAML psutil
+python3 -m pip install numpy PyYAML psutil
 
 # Test the installation
 echo "🧪 Testing ONNX Runtime installation..."
