@@ -1,0 +1,38 @@
+
+QUICK TRANSFER INSTRUCTIONS
+============================================================
+
+Method 1: SCP (Network Transfer)
+---------------------------------
+On your computer (in this directory):
+
+    scp -r jetson_deployment jetson@<JETSON_IP>:~/
+
+Replace <JETSON_IP> with your Jetson's IP address (find with ifconfig on Jetson)
+
+Method 2: USB Drive
+-------------------
+1. Create zip file (see below)
+2. Copy to USB drive
+3. Insert USB into Jetson
+4. Copy from /media/<username>/<drive_name>/
+
+Method 3: Git Repository
+-------------------------
+1. Commit these files to a git repository
+2. On Jetson: git clone <repo_url>
+
+Creating Zip File:
+------------------
+Windows:
+    Right-click jetson_deployment folder → Send to → Compressed (zipped) folder
+
+Linux/Mac:
+    zip -r jetson_deployment.zip jetson_deployment/
+
+============================================================
+
+After Transfer:
+1. cd jetson_deployment
+2. chmod +x quick_start_jetson.sh
+3. ./quick_start_jetson.sh
