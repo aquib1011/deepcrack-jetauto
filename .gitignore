@@ -40,13 +40,13 @@ htmlcov/
 *.ipynb
 
 # Local images/videos used for testing
-*.jpg
 *.jpeg
 *.png
 *.bmp
 *.tiff
 *.mp4
 *.avi
+DeepCrack/*.jpg
 *.mov
 
 # Jetson / TensorRT temp
